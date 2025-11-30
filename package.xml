@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Meta>
+    <title>Omega's Ability Merchant</title>
+    <id>omegaplatinum.elin.omegasabilitymerchant</id>
+    <author>OmegaPlatinum</author>
+    <loadPriority>100</loadPriority>
+    <description>
+        Adds an Ability Merchant to the city of Palmia who sells rare and normally unobtainable abilities for platinum coins.
+        パルミアの都に、プラチナ硬貨で希少な能力を販売する「能力商人」を追加します。
+
+        [h1] Note [/h1]
+        Not all abilities work or have been fully implemented yet. Please save your game before buying and test each ability first. Abilities that already have proper icons are more likely to work correctly.
+
+        [h1] Features [/h1]
+        [list]
+        [*] Introduces Ability Merchant Nichol.
+        [*] The merchant appears in the city of Palmia.
+        [*] Sells abilities that are normally unavailable.
+        [*] Abilities are purchased with platinum coins.
+        [*] Includes a configuration option to adjust the merchant inventory width.
+        [/list]
+
+        [h1] Requirements [/h1]
+        This mod requires the [b](Stable) Custom Whatever Loader[/b] mod for core functionality. Please subscribe to the [b](Stable) Custom Whatever Loader[/b] mod to ensure compatibility:
+        [list]
+        [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3544010094]https://steamcommunity.com/sharedfiles/filedetails/?id=3544010094[/url]
+        [/list]
+
+        [h1] Compatibility [/h1]
+        This mod works with existing save files.
+
+        [img] https://img.shields.io/badge/Supports%20Game%20Version-EA%2023.237%20Stable-green [/img]
+
+        [h1] 注意事項 [/h1]
+        すべての能力が正常に動作するわけではなく、未実装のものも含まれます。購入前には必ずセーブを行い、まずは試しに使用して動作を確認してください。専用アイコンが設定されている能力のほうが、正常に動作する可能性が高いです。
+
+        [h1] 特徴 [/h1]
+        [list]
+        [*] 能力商人ニコルを追加します。
+        [*] 商人はパルミアの都に登場します。
+        [*] 通常では入手できない能力を販売します。
+        [*] 能力の購入にはプラチナ硬貨を使用します。
+        [*] 商人のインベントリ幅を調整できる設定オプションを追加します。
+        [/list]
+
+        [h1] 必要条件 [/h1]
+        この MOD の基本機能には [b](Stable) Custom Whatever Loader[/b] が必要です。互換性を確保するために、[b](Stable) Custom Whatever Loader[/b] を購読してください：
+        [list]
+        [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3544010094]https://steamcommunity.com/sharedfiles/filedetails/?id=3544010094[/url]
+        [/list]
+
+        [h1] 互換性 [/h1]
+        この MOD は既存のセーブデータと互換性があります。
+
+        [img] https://img.shields.io/badge/対応ゲームバージョン-EA%2023.237%20Stable-green [/img]
+    </description>
+    <tags>General,Balance,NPC,Cheat</tags>
+    <visibility>Public</visibility>
+    <version>0.23.237</version>
+</Meta>

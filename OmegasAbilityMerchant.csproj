@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
+            Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{E9853214-86B0-439B-90CD-B64FC1198A7D}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>OmegasAbilityMerchant</RootNamespace>
+        <AssemblyName>OmegasAbilityMerchant</AssemblyName>
+        <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>C:\Program Files (x86)\Steam\steamapps\common\Elin\Package\Mod_Omegas_Ability_Merchant</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="0Harmony">
+          <HintPath>..\..\BepInEx\0Harmony.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="BepInEx.Core">
+          <HintPath>..\..\BepInEx\BepInEx.Core.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="BepInEx.Unity">
+          <HintPath>..\..\BepInEx\BepInEx.Unity.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Elin">
+          <HintPath>..\..\Elin\Elin.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="ModOptions">
+          <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\2135150\3381182341\ModOptions.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="mscorlib">
+          <HintPath>..\..\Elin\mscorlib.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="NPOI">
+          <HintPath>..\..\Elin\NPOI.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Plugins.BaseCore">
+          <HintPath>..\..\Elin\Plugins.BaseCore.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Plugins.Sound">
+          <HintPath>..\..\Elin\Plugins.Sound.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Plugins.UI">
+          <HintPath>..\..\Elin\Plugins.UI.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Reflex">
+          <HintPath>..\..\Elin\Reflex.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="System"/>
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Data"/>
+        <Reference Include="System.Xml"/>
+        <Reference Include="UniTask">
+          <HintPath>..\..\Elin\UniTask.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="UnityEngine">
+          <HintPath>..\..\Elin\UnityEngine.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule">
+          <HintPath>..\..\Elin\UnityEngine.CoreModule.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="UnityEngine.InputLegacyModule">
+          <HintPath>..\..\Elin\UnityEngine.InputLegacyModule.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="UnityEngine.TextRenderingModule">
+          <HintPath>..\..\Elin\UnityEngine.TextRenderingModule.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="UnityEngine.UI">
+          <HintPath>..\..\Elin\UnityEngine.UI.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="UnityEngine.UIModule">
+          <HintPath>..\..\Elin\UnityEngine.UIModule.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Properties\AssemblyInfo.cs"/>
+		<Compile Include="OmegasAbilityMerchant\*.cs" />
+		<Compile Include="Config\OmegasAbilityMerchantConfig.cs" />
+		<Compile Include="Patches\*.cs" />
+		<Compile Include="UI\*.cs" />
+    </ItemGroup>
+	<ItemGroup>
+      <Content Include="LangMod\CN\SourceAbilityMerchant.xlsx">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="LangMod\EN\SourceAbilityMerchant.xlsx">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="LangMod\ZHTW\SourceAbilityMerchant.xlsx">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="package.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Portrait\UN_omega_nichol.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+	  <Content Include="preview.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+	  <Content Include="preview.pdn" />
+	  <Content Include="Texture\omega_nichol.pdn" />
+	  <Content Include="Texture\omega_nichol.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>
