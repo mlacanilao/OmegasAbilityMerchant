@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Meta>
+    <title>Omega's Ability Merchant</title>
+    <id>omegaplatinum.elin.omegasabilitymerchant</id>
+    <author>OmegaPlatinum</author>
+    <loadPriority>100</loadPriority>
+    <description>
+        Adds Nichol, an Ability Merchant in Palmia who sells specialized ability skillbooks for platinum coins, including abilities not normally sold.
+        パルミアの都に、通常は販売されない能力を含む能力の専用スキルブックをプラチナ硬貨で販売する「能力商人」ニコルを追加します。
+
+        [h1] Note [/h1]
+        Some listed abilities may be unfinished or unsuitable for normal play. Back up your save before experimenting.
+
+        [h1] Features [/h1]
+        [list]
+        [*] Introduces Ability Merchant Nichol.
+        [*] The merchant appears in the city of Palmia.
+        [*] Nichol also trains changing skill sets.
+        [*] Sells specialized skillbooks for qualifying abilities, including abilities not normally available from shops.
+        [*] Ability skillbooks are purchased with platinum coins.
+        [*] Includes a configurable merchant inventory width.
+        [/list]
+
+        [h1] Configuration [/h1]
+        Adjust this setting via the configuration file:
+
+        [h2] Merchant Inventory Width [/h2]
+        Set the target inventory width, in columns, for Nichol's shop inventory.
+        The default is 8. Values below 8 are treated as 8, and values above 64 are treated as 64 without rewriting the saved setting.
+        [code] Default: 8 [/code]
+
+        [h1] Configuration File Location [/h1]
+        [code] Steam\steamapps\common\Elin\BepInEx\config\omegaplatinum.elin.omegasabilitymerchant.cfg [/code]
+
+        [img] https://img.shields.io/badge/Supports%20Game%20Version-EA%2023.325%20Patch%202%20Stable-green [/img]
+
+        [h1] 注意事項 [/h1]
+        一部の能力は未完成、または通常のプレイに適さない場合があります。試す前にセーブデータをバックアップしてください。
+
+        [h1] 特徴 [/h1]
+        [list]
+        [*] 能力商人ニコルを追加します。
+        [*] 商人はパルミアの都に登場します。
+        [*] ニコルは毎回変わるスキル訓練も行います。
+        [*] 通常の店では入手できない能力を含む、条件を満たす能力の専用スキルブックを販売します。
+        [*] 能力のスキルブックはプラチナ硬貨で購入します。
+        [*] 商人インベントリの幅を設定できます。
+        [/list]
+
+        [h1] 設定 [/h1]
+        この設定は設定ファイルで調整できます：
+
+        [h2] 商人インベントリ幅 [/h2]
+        ニコルの店のインベントリ幅（列数）の目標値を設定します。
+        初期値は8です。8未満の値は8として、64を超える値は64として扱われ、保存されている設定値は書き換えられません。
+        [code] 初期値: 8 [/code]
+
+        [h1] 設定ファイルの場所 [/h1]
+        [code] Steam\steamapps\common\Elin\BepInEx\config\omegaplatinum.elin.omegasabilitymerchant.cfg [/code]
+
+        [img] https://img.shields.io/badge/対応ゲームバージョン-EA%2023.325%20Patch%202%20Stable-green [/img]
+    </description>
+    <tags>General,Balance,NPC,Cheat</tags>
+    <visibility>Public</visibility>
+    <version>0.23.325</version>
+</Meta>

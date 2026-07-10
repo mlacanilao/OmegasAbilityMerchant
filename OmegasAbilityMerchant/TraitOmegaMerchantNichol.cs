@@ -1,7 +1,4 @@
-using System;
-using System.Linq;
 using OmegasAbilityMerchant;
-using UnityEngine;
 
 class TraitOmegaMerchantNichol : TraitMerchant
 {
@@ -33,54 +30,60 @@ class TraitOmegaMerchantNichol : TraitMerchant
     {
         get
         {
-            return base.GetParam(i: 1, def: null).IsEmpty(defaultStr: TraitTrainer.ids[EClass.rnd(a: TraitTrainer.ids.Length)]);
+            return base.GetParam(i: 1, def: null)
+                .IsEmpty(defaultStr: TraitTrainer.ids[EClass.rnd(a: TraitTrainer.ids.Length)]);
         }
     }
     
-    void _OnBarter()
+    public override void OnBarter(bool reroll = false)
     {
-        int inventoryWidth = OmegasAbilityMerchantConfig.InventoryWidth?.Value ?? 16;
-        
-        var inventory = this.owner?.things?.Find(id: "chest_merchant");
+        Card? merchantOwner = owner;
+        if (merchantOwner is null)
+        {
+            AbilityMerchantStockFailureLogger.LogBarterUnavailable(owner: null, reason: "ownerMissing");
+            return;
+        }
+
+        if (merchantOwner.things is null)
+        {
+            AbilityMerchantStockFailureLogger.LogBarterUnavailable(
+                owner: merchantOwner,
+                reason: "ownerThingsMissing");
+            return;
+        }
+
+        var worldDate = EClass.world?.date;
+        if (worldDate is null)
+        {
+            AbilityMerchantStockFailureLogger.LogBarterUnavailable(
+                owner: merchantOwner,
+                reason: "worldDateMissing");
+            return;
+        }
+
+        bool shouldGenerateCustomStock = worldDate.IsExpired(merchantOwner.c_dateStockExpire)
+                                         && (RestockDay >= 0 || merchantOwner.isRestocking == false);
+
+        base.OnBarter(reroll: reroll);
+
+        Thing? inventory = AbilityMerchantInventory.FindAndApplyConfiguredWidth(owner: merchantOwner);
         if (inventory is null)
         {
-            inventory = ThingGen.Create(id: "chest_merchant");
-            this.owner?.AddThing(t: inventory);
-        }
-        var items = inventory?.things;
-        
-        if (items?.width != inventoryWidth)
-        {
-            items?.ChangeSize(w: inventoryWidth, h: items.height);
+            return;
         }
 
-        var abilities = EClass.sources.elements.rows
-            .Where(
-                predicate: r =>
-                    r.group == "ABILITY"
-                    && r.category == "ability"
-                    && r.categorySub == "ability"
-                    && r.aliasRef != "mold"
-            )
-            .ToList();
-        
-        foreach (var ability in abilities)
+        try
         {
-            Thing thing = ThingGen.CreateSkillbook(ele: ability.id, num: 1);
-            thing.c_IDTState = 0;
-            thing.SetBlessedState(s: BlessedState.Normal);
-            inventory?.AddThing(t: thing);
-        }
-
-        if (items != null)
-        {
-            int w = Math.Max(val1: 1, val2: items.width);
-            int neededH = Math.Max(val1: 1, val2: (items.Count + w - 1) / w);
-            
-            if (items.height != neededH)
+            if (shouldGenerateCustomStock == false)
             {
-                items.ChangeSize(w: w, h: neededH);
+                return;
             }
+
+            AbilityMerchantStock.AddAbilitySkillbooks(inventory: inventory, owner: merchantOwner);
+        }
+        finally
+        {
+            AbilityMerchantInventory.FitHeight(inventory: inventory, owner: merchantOwner);
         }
     }
 }
