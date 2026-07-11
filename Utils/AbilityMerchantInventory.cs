@@ -128,6 +128,8 @@ internal static class AbilityMerchantInventory
 
         try
         {
+            ThingContainer.listUnassigned?.Clear();
+
             if (items.width == width && items.height == height)
             {
                 items.RefreshGrid();
@@ -148,6 +150,10 @@ internal static class AbilityMerchantInventory
                 phase: phase,
                 exception: exception);
             return false;
+        }
+        finally
+        {
+            ThingContainer.listUnassigned?.Clear();
         }
     }
 }
